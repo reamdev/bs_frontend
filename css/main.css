@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #0d2a3d;
+  height: 65px;
+  margin-bottom: 30px;
+}
+
+#header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  font-weight: 700;
+  font-size: 1.275rem;
+}
+
+.header-logo a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.header-search {
+  display: flex;
+}
+
+.header-search > input {
+  width: 550px;
+  height: 38px;
+  padding-left: 8px;
+}
+
+.header-search > button {
+  width: 38px;
+}
+
+.header-search > button:hover {
+  cursor: pointer;
+}
+
+.header-search > button > i {
+  font-size: 1.275rem;
+}
+
+.header-options {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header-option-icon-container {
+  margin-right: 10px;
+}
+
+.header-option-icon-container > i {
+  font-size: 1.75rem;
+  color: #e0e0e0;
+}
+
+.header-option-icon-container > i:hover {
+  cursor: pointer;
+}
+
+.header-option-icon-container > i:active {
+  transform: scale(0.95);
+}
+
+#prod {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+#opciones {
+  width: 20%;
+}
+
+#opciones h3 {
+  font-size: 1.75rem;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+#opciones ul {
+  list-style: none;
+}
+
+#opciones ul li {
+  width: 100%;
+  height: 100%;
+  transition: all .25s;
+  margin-bottom: 5px;
+}
+
+#opciones ul li:hover {
+  background-color: rgba(13, 42, 61, 0.75);
+}
+
+#opciones ul li:active {
+  transform: scale(0.95);
+}
+
+#opciones ul li:hover a {
+  color: #FFFFFF;
+  padding-left: 10px;
+}
+
+#opciones ul li a {
+  color: #0d2a3d;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  padding: 10px 15px;
+  padding-left: 5px;
+  transition: all .25s;
+  width: 100%;
+}
+
+#productos {
+  width: 70%;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(160px, 180px));
+  grid-auto-rows: minmax(220px, 280px);
+  column-gap: 25px;
+  row-gap: 20px;
+}
+
+/* CARD */
+.card {
+  /* width: 200px; */
+  /* height: 280px; */
+  border-radius: 20px;
+  background-color: #0d2a3d;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  transition: all .25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.card .card-image {
+  width: 100%;
+  /* height: 50%; */
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.card .card-image img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px 20px 0 0;
+}
+
+.card .card-body {
+  padding: 20px 10px;
+}
+
+.card .card-body p {
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.card .card-footer {
+  padding: 10px;
+  padding-top: 0;
+}
+
+.card .card-footer p {
+  color: #e7e7e7;
+  font-weight: 400;
+}
+
+.card .card-footer .prod-discount {
+  display: flex;
+  align-items: flex-end;
+}
+
+.card .card-footer .prod-discount span {
+  display: block;
+  font-size: 0.75rem;
+  margin-left: 5px;
+  font-weight: 300;
+  text-decoration: line-through;
+}
+
+.card:hover .addProduct {
+  transform: translateY(0);
+}
+
+.card .addProduct {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: aquamarine;
+  bottom: 10px;
+  right: 10px;
+  transition: all 0.25s;
+  transform: translateY(50px);
+}
+
+.card .addProduct:hover {
+  cursor: pointer;
+}
+
+.card .addProduct:active {
+  transform: scale(0.9);
+}
+
+.card .addProduct > i {
+  font-size: 1.45rem;
+}
