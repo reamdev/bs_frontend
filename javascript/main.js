@@ -84,17 +84,34 @@ const insertProducts = (products, productContainer) => {
 
       productContainer.innerHTML += newProduct;
     });
+
+    return;
   }
+
+  productContainer.innerHTML = `
+    <div>
+      <p>No se encontraron productos</p>
+    </div>
+  `;
 };
 
 window.addEventListener("DOMContentLoaded", () => {
   const searchButton = document.querySelector(".header-search > button");
+  const searchInput = document.querySelector(".header-search > input");
+
   searchButton.addEventListener("click", () => {
-    const searchInputValue = document.querySelector(
-      ".header-search > input"
-    ).value;
+    const searchInputValue = searchInput.value;
 
     location.href = "?search=" + searchInputValue;
+  });
+
+  searchInput.addEventListener("keyup", (e) => {
+    console.log(e.keyCode);
+    if (e.code === "Enter") {
+      const searchInputValue = searchInput.value;
+
+      location.href = "?search=" + searchInputValue;
+    }
   });
 
   // * Cargar Categorias
