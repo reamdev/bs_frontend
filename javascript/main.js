@@ -18,7 +18,7 @@ const getCategoryContainer = () => {
 const insertCategories = (categories, categoriesContainer) => {
   categoriesContainer.innerHTML = `
     <li>
-      <a href="/">Ver Todos</a>
+      <a href="https://reamdev.github.io/bs_frontend/">Ver Todos</a>
     </li>
   `;
 
