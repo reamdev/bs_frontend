@@ -16,15 +16,19 @@ const getCategoryContainer = () => {
 };
 
 const insertCategories = (categories, categoriesContainer) => {
-  categoriesContainer.innerHTML = "";
+  categoriesContainer.innerHTML = `
+    <li>
+      <a href="/">Ver Todos</a>
+    </li>
+  `;
 
   if (categories.length > 0) {
     categories.forEach((category) => {
       const newCategory = `
         <li>
-          <a href="?category=${category.id}">${firstCharacterInUppercase(
-        category.name
-      )}</a>
+          <a href="?category=${category.id}">
+            ${firstCharacterInUppercase(category.name)}
+          </a>
         </li>
       `;
 
@@ -45,27 +49,31 @@ const insertProducts = (products, productContainer) => {
   if (products.length > 0) {
     products.forEach((prod) => {
       const newProduct = `
-        <div class="card">
-          <div class="card-image">
+        <div class="bscard">
+          <div class="bscard-image">
             <img src="${
               prod.url_image === null || prod.url_image === ""
                 ? PRODUCT_NOT_FOUND_IMG
                 : prod.url_image
             }" alt="${prod.name} Image">
           </div>
-          <div class="card-body">
+          <div class="bscard-body">
             <p>${prod.name}</p>
           </div>
           ${
             prod.discount > 0
               ? `
-              <div class="card-footer">
-                <p class="prod-discount">${
+              <div class="bscard-footer">
+                <p class="prod-discount">$${
                   prod.price * (1 - Number(prod.discount) / 100)
                 }<span>$${prod.price}</span></p>
               </div>
             `
-              : ""
+              : `
+              <div class="bscard-footer">
+                <p>$${prod.price}</p>
+              </div>
+            `
           }
 
           <div class="addProduct">
